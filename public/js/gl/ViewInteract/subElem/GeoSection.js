@@ -301,14 +301,12 @@ GeoSection.prototype.cancelBuildToScene = function () {
     thatGUI.groundSec.uploadCityObj = {
         'object': '',
         'type': ''
-    }
+    };
     thatGUI.groundSec.groundinteractDiv.style.display = 'none';
     thatGUI.objLoaded = false;
-
-}
+};
 
 GeoSection.prototype.createGeoGeoPosition = function () {
-
 
     this.addgeoposBody = document.createElement('div');
     this.addgeoposBody.id = 'addGeoElement';
@@ -329,5 +327,4 @@ GeoSection.prototype.createGeoGeoPosition = function () {
     this.addProposalBtn.setAttribute("onclick", "thatGUI.groundSec.addGeoPosToDB()");
     this.addgeoposBody.appendChild(this.addProposalBtn);
     this.groundinteractDiv.style.display = 'block';
-
-}
+};
