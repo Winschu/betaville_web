@@ -36,15 +36,6 @@ function MapPreView(city){
 				overlapPct: 0
 			} );
 		// Grid
-
-		
-
-		
-
-
-		
-	
-
 		// Lights
 
 	//	var hemiLight = new THREE.HemisphereLight( 0x00000, 0x00000, 2);

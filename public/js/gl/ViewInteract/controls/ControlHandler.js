@@ -7,10 +7,9 @@ function ControlHandler(domElem){
 
 	//create new camera
 	this.camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, thatground.terrain.corner["maxXZ"].x+thatground.terrain.corner["maxXZ"].z+10000  );
-	if(objLoad.firstElem == ""){
+	if(objLoad.firstElem === ""){
 		//this.camera.position.set( thatground.terrain.corner["maxXZ"]["x"]/2, thatground.terrain.corner["maxXZ"]["y"]+15000|0, (thatground.terrain.corner["maxXZ"]["z"]/3)+150000|0);
 		this.camera.position.set( 0, thatground.terrain.corner["maxXZ"]["y"]+100000, -(thatground.terrain.corner["maxXZ"]["z"]*1.6)|0);
-	
 	}else{
 		this.camera.position.set( objLoad.firstElem.x, objLoad.firstElem.y+1000, objLoad.firstElem.z+3000);
 	}
@@ -19,11 +18,9 @@ function ControlHandler(domElem){
 	//this.camera.lookAt (new THREE.Vector3 (0.0, 0.0, 0.0));
 	this.camera.updateProjectionMatrix();
 
-
-
 	//define camera look at point
 	this.tempPosVec = new THREE.Vector3();
-	if(objLoad.firstElem == ""){
+	if(objLoad.firstElem === ""){
 		//this.camLookAt =  new THREE.Vector3(thatground.terrain.corner["maxXZ"]["x"]/2, thatground.terrain.corner["maxXZ"]["y"], thatground.terrain.corner["maxXZ"]["z"]/2);
 		this.camLookAt =  new THREE.Vector3( 0 , 0, 0);
 	
@@ -46,7 +43,6 @@ function ControlHandler(domElem){
 	this.upRay = new THREE.Raycaster();
 	this.dwnRay = new THREE.Raycaster();
 	//console.log(this.camLookAt);
-
 }
 
 
@@ -60,18 +56,13 @@ ControlHandler.prototype.render = function(){
 		this.lines[i].position.copy(this.camLookAt);
 	}
 
-	
 	this.tempPosVec = this.camLookAt.clone();
 	this.controls.update();
+};
 
-}
 //force the look at point to the terrain
 ControlHandler.prototype.getLookAtHight = function(){
-		
-	
-		if(this.tempPosVec.x != this.camLookAt.x || this.tempPosVec.z != this.camLookAt.z){
-			
-							
+		if(this.tempPosVec.x !== this.camLookAt.x || this.tempPosVec.z !== this.camLookAt.z){
 			var dirupVec = new THREE.Vector3(0, 1, 0);
 			var dirdownVec = new THREE.Vector3(0, -1, 0);
 			var orignVec = new THREE.Vector3(0, 0, 0);
@@ -84,7 +75,6 @@ ControlHandler.prototype.getLookAtHight = function(){
 									0, 0, 1, this.camLookAt.z,
 									0, 0, 0, 1);
 
-
 			this.upRay.ray.applyMatrix4(this.rayTransform);
 			this.dwnRay.ray.applyMatrix4(this.rayTransform);
 
@@ -96,22 +86,8 @@ ControlHandler.prototype.getLookAtHight = function(){
 			if(interDwn.length > 0 ){
 				this.camLookAt.y =  interDwn[0].point.y + motions.lookAtHeigh;	
 			}
-			
-			
-
-			
-			
 		}
-
-		
-
-
-}
-
-
-
-
-
+};
 
 //Draw the X,Y,Z lines for orintation
 ControlHandler.prototype.addDirectionslines = function(scene){
@@ -153,4 +129,4 @@ ControlHandler.prototype.addDirectionslines = function(scene){
 	for(var i = 0; i < this.lines.length; i++){
 		scene.add( this.lines[i] );
 	}
-}
+};

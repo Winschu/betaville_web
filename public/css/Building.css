@@ -32,7 +32,7 @@
 }
 #buildingContentDiv input[type=button]{
 	float:left;
-	font-family: verdana;
+	font-family: verdana, sans-serif;
 	font-size: 95%;
 	margin:1%;
 
