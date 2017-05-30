@@ -2,7 +2,6 @@ function CamControl(){
 
 	camControll = this;
 
-
 	this.imgLib = {
 		'compass': "../imgs/cntl/compass.png",
 		'mLeft'	: "../imgs/cntl/mleft.png",
@@ -30,9 +29,7 @@ function CamControl(){
 		'zIN': "../imgs/cntl/zoominA.png",
 		'zOUT'	: "../imgs/cntl/zoomoutA.png"
 	};
-	this.imgArray = new Array();
-
-
+	this.imgArray = [];
 
 	this.controlDIV = document.createElement('div');
 	this.controlDIV.style.position = "absolute";
@@ -43,77 +40,56 @@ function CamControl(){
 	this.controlDIV.id = "camControllDiv";
 	document.getElementById('guiDiv').appendChild(this.controlDIV);
 
-
 	new Motions();
 	this.createUI();
-
-
 }
-
 
 CamControl.prototype.createUI = function() {
 	var ul = document.createElement('ul');
 	ul.style.padding = "0";
 	ul.style.margin = "0";
-	ul.style.width = "370px"
+	ul.style.width = "370px";
 
 	for(var key in camControll.imgLib){
-
 
 		var li = document.createElement('li');
 		li.style.display = "inline-block";
 		li.style.margin = "1%";	
 
 		var tempIMG = document.createElement('img');
-		if(key == 'zIN' || key == 'zOUT'){
-
+		if(key === 'zIN' || key === 'zOUT'){
 			li.id = "zoomBTN";
-
 		}else{
-
 			li.id = "cntrBTN";
-			
 		}
-		if(key == 'compass'){
+		if(key === 'compass'){
 			tempIMG.id = "compassCNTR";
 		}
-		tempIMG.src = camControll.imgLib[key];
 
+		tempIMG.src = camControll.imgLib[key];
 		tempIMG.setAttribute("motion", key);
 		tempIMG.onmousedown = motions.startInterval;
 
 		tempIMG.onmouseup = function(){
-
 			motions.runned = false;
 			var key = this.getAttribute('motion');
 			this.src = camControll.imgLib[key];
         	clearInterval(motions.interval);
-
-    	}
+    	};
     	tempIMG.onmouseleave = function(){
-
-
     		motions.runned = false;
     		var key = this.getAttribute('motion');
     		this.src = camControll.imgLib[key];
         	clearInterval(motions.interval);
-
-    	}
+    	};
 
 		li.appendChild(tempIMG);
 		ul.appendChild(li);
-
 	}
 
 	camControll.imgArray.push(ul);
 
-
 	for(var i = 0; i < camControll.imgArray.length; i++){
-
-
 		camControll.controlDIV.appendChild(camControll.imgArray[i]);
-
-
 	}
-
 };
