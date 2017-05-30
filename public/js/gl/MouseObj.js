@@ -1,32 +1,27 @@
 /*
-*	mange the mouse on the scene for interactions
+*	manage the mouse on the scene for interactions
 */
 function MouseObj(){
-	
 	this.pos = new THREE.Vector3(0,0,0);
 	this.userHasClicked = false;
 	this.button = "";
 	this.flag = 0;
 
-
 	this.raycaster = new THREE.Raycaster();
 	this.raycaster.ray.direction.set(0, -1, 0);
-
-
-
 }
 
 //call mouse click
 MouseObj.prototype.mouseClick = function(event, flag){
-	if(event.button == 0){
+	if(event.button === 0){
   		this.button = "left";
   		this.flag = flag;
-	}else if(event.button == 2){
+	}else if(event.button === 2){
   		this.pos.z =  1;
   		this.button = "right";		
 	}
 	thisCore.mouse.userHasClicked = true;
-}
+};
 
 //call on mosue move
 MouseObj.prototype.mouseMove = function(event){
@@ -43,7 +38,5 @@ MouseObj.prototype.mouseMove = function(event){
 
 //renderer function for the mouse
 MouseObj.prototype.render = function(){
-
 	this.raycaster.setFromCamera(this.pos.clone(), thatControl.camera);
-
 };

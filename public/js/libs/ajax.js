@@ -25,7 +25,7 @@ ajax.x = function() {
 };
 
 ajax.send = function(url, callback, method, data, sync) {
-    if(method == 'dataUpload'){
+    if(method === 'dataUpload'){
         var x = ajax.x();
         x.onprogress=updateProgress;
         x.open('POST', url, sync);
@@ -44,11 +44,11 @@ ajax.send = function(url, callback, method, data, sync) {
         x.onprogress=updateProgress;
         x.open(method, url, sync);
         x.onreadystatechange = function() {
-            if (x.readyState == 4) {
+            if (x.readyState === 4) {
                 callback(x.responseText)
             }
         };
-        if (method == 'POST') {
+        if (method === 'POST') {
             x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         }
         x.send(data)
