@@ -28,7 +28,7 @@ function CommentSection() {
     commentsINput.id = 'commentsInputDiv';
 
     this.objectNameHTML = document.createElement('p');
-    this.objectNameHTML.style.color = 'white'
+    this.objectNameHTML.style.color = 'white';
     this.objectNameHTML.style.float = 'left';
 
     commentsINput.appendChild(this.objectNameHTML);
@@ -108,9 +108,7 @@ CommentSection.prototype.updateMeta = function (obj) {
         for (var i = 0; i < list.length; i++) {
             //	console.log(list[i].id, obj.userData.id);
             if (list[i].id === obj.userData.id) {
-
                 var rawObj = list[i];
-
             }
         }
         for (var j = 0; i < tds.length; i++) {
@@ -138,9 +136,9 @@ CommentSection.prototype.updateMeta = function (obj) {
                         break;
                     case 10:
                         if (rawObj.URL) {
-                            tds[i].innerHTML = '<p>' + rawObj.URL + '</p>'
+                            tds[i].innerHTML = '<p>' + rawObj.URL + '</p>';
                         } else {
-                            tds[i].innerHTML = '<p>-</p>'
+                            tds[i].innerHTML = '<p>-</p>';
                         }
                         break;
                 }
@@ -154,9 +152,8 @@ CommentSection.prototype.addCommentToDiv = function (obj) {
     var commentcontainer = document.createElement("div");
     commentcontainer.id = "commentContainer";
 
-
     //add Values from JSON file = obj
-    var buildID = document.createElement("p")
+    var buildID = document.createElement("p");
     buildID.id = "buildID";
     buildID.innerHTML = "Building ID: ";
     buildID.innerHTML += obj.buildID;
@@ -173,7 +170,7 @@ CommentSection.prototype.addCommentToDiv = function (obj) {
     commentcontainer.appendChild(text);
 
     this.commentsDiv.appendChild(commentcontainer);
-}
+};
 
 CommentSection.prototype.closeComments = function () {
     //hide Comments Body
@@ -182,4 +179,4 @@ CommentSection.prototype.closeComments = function () {
 
     //clear the DiV
     this.commentsDiv.innerHTML = "";
-}
+};
