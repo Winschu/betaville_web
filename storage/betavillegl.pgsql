@@ -14,13 +14,13 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: topology; Type: SCHEMA; Schema: -; Owner: postgres
+-- Name: topology; Type: SCHEMA; Schema: -; Owner: superuser
 --
 
 CREATE SCHEMA topology;
 
 
-ALTER SCHEMA topology OWNER TO postgres;
+ALTER SCHEMA topology OWNER TO superuser;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
@@ -71,7 +71,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: building_comments; Type: TABLE; Schema: public; Owner: postgres
+-- Name: building_comments; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE building_comments (
@@ -85,10 +85,10 @@ CREATE TABLE building_comments (
 );
 
 
-ALTER TABLE building_comments OWNER TO postgres;
+ALTER TABLE building_comments OWNER TO superuser;
 
 --
--- Name: building_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: building_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE building_comments_id_seq
@@ -99,17 +99,17 @@ CREATE SEQUENCE building_comments_id_seq
     CACHE 1;
 
 
-ALTER TABLE building_comments_id_seq OWNER TO postgres;
+ALTER TABLE building_comments_id_seq OWNER TO superuser;
 
 --
--- Name: building_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: building_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE building_comments_id_seq OWNED BY building_comments.id;
 
 
 --
--- Name: buildings; Type: TABLE; Schema: public; Owner: postgres
+-- Name: buildings; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE buildings (
@@ -130,10 +130,10 @@ CREATE TABLE buildings (
 );
 
 
-ALTER TABLE buildings OWNER TO postgres;
+ALTER TABLE buildings OWNER TO superuser;
 
 --
--- Name: buildings_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: buildings_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE buildings_id_seq
@@ -144,17 +144,17 @@ CREATE SEQUENCE buildings_id_seq
     CACHE 1;
 
 
-ALTER TABLE buildings_id_seq OWNER TO postgres;
+ALTER TABLE buildings_id_seq OWNER TO superuser;
 
 --
--- Name: buildings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: buildings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE buildings_id_seq OWNED BY buildings.id;
 
 
 --
--- Name: buildings_trash; Type: TABLE; Schema: public; Owner: postgres
+-- Name: buildings_trash; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE buildings_trash (
@@ -174,10 +174,10 @@ CREATE TABLE buildings_trash (
 );
 
 
-ALTER TABLE buildings_trash OWNER TO postgres;
+ALTER TABLE buildings_trash OWNER TO superuser;
 
 --
--- Name: cities; Type: TABLE; Schema: public; Owner: postgres
+-- Name: cities; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE cities (
@@ -190,10 +190,10 @@ CREATE TABLE cities (
 );
 
 
-ALTER TABLE cities OWNER TO postgres;
+ALTER TABLE cities OWNER TO superuser;
 
 --
--- Name: cities_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: cities_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE cities_id_seq
@@ -204,17 +204,17 @@ CREATE SEQUENCE cities_id_seq
     CACHE 1;
 
 
-ALTER TABLE cities_id_seq OWNER TO postgres;
+ALTER TABLE cities_id_seq OWNER TO superuser;
 
 --
--- Name: cities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: cities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE cities_id_seq OWNED BY cities.id;
 
 
 --
--- Name: datamap; Type: TABLE; Schema: public; Owner: postgres
+-- Name: datamap; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE datamap (
@@ -227,10 +227,10 @@ CREATE TABLE datamap (
 );
 
 
-ALTER TABLE datamap OWNER TO postgres;
+ALTER TABLE datamap OWNER TO superuser;
 
 --
--- Name: datamap_gid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: datamap_gid_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE datamap_gid_seq
@@ -241,17 +241,17 @@ CREATE SEQUENCE datamap_gid_seq
     CACHE 1;
 
 
-ALTER TABLE datamap_gid_seq OWNER TO postgres;
+ALTER TABLE datamap_gid_seq OWNER TO superuser;
 
 --
--- Name: datamap_gid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: datamap_gid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE datamap_gid_seq OWNED BY datamap.gid;
 
 
 --
--- Name: datasets; Type: TABLE; Schema: public; Owner: postgres
+-- Name: datasets; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE datasets (
@@ -265,10 +265,10 @@ CREATE TABLE datasets (
 );
 
 
-ALTER TABLE datasets OWNER TO postgres;
+ALTER TABLE datasets OWNER TO superuser;
 
 --
--- Name: datasets_geom; Type: TABLE; Schema: public; Owner: postgres
+-- Name: datasets_geom; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE datasets_geom (
@@ -282,11 +282,10 @@ CREATE TABLE datasets_geom (
     height character varying
 );
 
-
-ALTER TABLE datasets_geom OWNER TO postgres;
+ALTER TABLE datasets_geom OWNER TO superuser;
 
 --
--- Name: datasets_geom_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: datasets_geom_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE datasets_geom_id_seq
@@ -297,17 +296,17 @@ CREATE SEQUENCE datasets_geom_id_seq
     CACHE 1;
 
 
-ALTER TABLE datasets_geom_id_seq OWNER TO postgres;
+ALTER TABLE datasets_geom_id_seq OWNER TO superuser;
 
 --
--- Name: datasets_geom_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: datasets_geom_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE datasets_geom_id_seq OWNED BY datasets_geom.id;
 
 
 --
--- Name: datasets_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: datasets_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE datasets_id_seq
@@ -318,17 +317,17 @@ CREATE SEQUENCE datasets_id_seq
     CACHE 1;
 
 
-ALTER TABLE datasets_id_seq OWNER TO postgres;
+ALTER TABLE datasets_id_seq OWNER TO superuser;
 
 --
--- Name: datasets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: datasets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE datasets_id_seq OWNED BY datasets.id;
 
 
 --
--- Name: geo__position_comments; Type: TABLE; Schema: public; Owner: postgres
+-- Name: geo__position_comments; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE geo__position_comments (
@@ -342,10 +341,10 @@ CREATE TABLE geo__position_comments (
 );
 
 
-ALTER TABLE geo__position_comments OWNER TO postgres;
+ALTER TABLE geo__position_comments OWNER TO superuser;
 
 --
--- Name: geo__position_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: geo__position_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE geo__position_comments_id_seq
@@ -356,17 +355,17 @@ CREATE SEQUENCE geo__position_comments_id_seq
     CACHE 1;
 
 
-ALTER TABLE geo__position_comments_id_seq OWNER TO postgres;
+ALTER TABLE geo__position_comments_id_seq OWNER TO superuser;
 
 --
--- Name: geo__position_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: geo__position_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE geo__position_comments_id_seq OWNED BY geo__position_comments.id;
 
 
 --
--- Name: geo__positions; Type: TABLE; Schema: public; Owner: postgres
+-- Name: geo__positions; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE geo__positions (
@@ -382,10 +381,10 @@ CREATE TABLE geo__positions (
 );
 
 
-ALTER TABLE geo__positions OWNER TO postgres;
+ALTER TABLE geo__positions OWNER TO superuser;
 
 --
--- Name: geo__positions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: geo__positions_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE geo__positions_id_seq
@@ -396,17 +395,17 @@ CREATE SEQUENCE geo__positions_id_seq
     CACHE 1;
 
 
-ALTER TABLE geo__positions_id_seq OWNER TO postgres;
+ALTER TABLE geo__positions_id_seq OWNER TO superuser;
 
 --
--- Name: geo__positions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: geo__positions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE geo__positions_id_seq OWNED BY geo__positions.id;
 
 
 --
--- Name: locations; Type: TABLE; Schema: public; Owner: postgres
+-- Name: locations; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE locations (
@@ -419,10 +418,10 @@ CREATE TABLE locations (
 );
 
 
-ALTER TABLE locations OWNER TO postgres;
+ALTER TABLE locations OWNER TO superuser;
 
 --
--- Name: locations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: locations_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE locations_id_seq
@@ -433,17 +432,17 @@ CREATE SEQUENCE locations_id_seq
     CACHE 1;
 
 
-ALTER TABLE locations_id_seq OWNER TO postgres;
+ALTER TABLE locations_id_seq OWNER TO superuser;
 
 --
--- Name: locations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: locations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE locations_id_seq OWNED BY locations.id;
 
 
 --
--- Name: proposal_object_comments; Type: TABLE; Schema: public; Owner: postgres
+-- Name: proposal_object_comments; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE proposal_object_comments (
@@ -457,10 +456,10 @@ CREATE TABLE proposal_object_comments (
 );
 
 
-ALTER TABLE proposal_object_comments OWNER TO postgres;
+ALTER TABLE proposal_object_comments OWNER TO superuser;
 
 --
--- Name: proposal_object_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: proposal_object_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE proposal_object_comments_id_seq
@@ -471,17 +470,17 @@ CREATE SEQUENCE proposal_object_comments_id_seq
     CACHE 1;
 
 
-ALTER TABLE proposal_object_comments_id_seq OWNER TO postgres;
+ALTER TABLE proposal_object_comments_id_seq OWNER TO superuser;
 
 --
--- Name: proposal_object_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: proposal_object_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE proposal_object_comments_id_seq OWNED BY proposal_object_comments.id;
 
 
 --
--- Name: proposal_objects; Type: TABLE; Schema: public; Owner: postgres
+-- Name: proposal_objects; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE proposal_objects (
@@ -504,10 +503,10 @@ CREATE TABLE proposal_objects (
 );
 
 
-ALTER TABLE proposal_objects OWNER TO postgres;
+ALTER TABLE proposal_objects OWNER TO superuser;
 
 --
--- Name: proposal_objects_trash; Type: TABLE; Schema: public; Owner: postgres
+-- Name: proposal_objects_trash; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE proposal_objects_trash (
@@ -529,10 +528,10 @@ CREATE TABLE proposal_objects_trash (
 );
 
 
-ALTER TABLE proposal_objects_trash OWNER TO postgres;
+ALTER TABLE proposal_objects_trash OWNER TO superuser;
 
 --
--- Name: proposals; Type: TABLE; Schema: public; Owner: postgres
+-- Name: proposals; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE proposals (
@@ -548,10 +547,10 @@ CREATE TABLE proposals (
 );
 
 
-ALTER TABLE proposals OWNER TO postgres;
+ALTER TABLE proposals OWNER TO superuser;
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: postgres
+-- Name: users; Type: TABLE; Schema: public; Owner: superuser
 --
 
 CREATE TABLE users (
@@ -568,10 +567,10 @@ CREATE TABLE users (
 );
 
 
-ALTER TABLE users OWNER TO postgres;
+ALTER TABLE users OWNER TO superuser;
 
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: superuser
 --
 
 CREATE SEQUENCE users_id_seq
@@ -582,94 +581,94 @@ CREATE SEQUENCE users_id_seq
     CACHE 1;
 
 
-ALTER TABLE users_id_seq OWNER TO postgres;
+ALTER TABLE users_id_seq OWNER TO superuser;
 
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: superuser
 --
 
 ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY building_comments ALTER COLUMN id SET DEFAULT nextval('building_comments_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY buildings ALTER COLUMN id SET DEFAULT nextval('buildings_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY cities ALTER COLUMN id SET DEFAULT nextval('cities_id_seq'::regclass);
 
 
 --
--- Name: gid; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: gid; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY datamap ALTER COLUMN gid SET DEFAULT nextval('datamap_gid_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY datasets ALTER COLUMN id SET DEFAULT nextval('datasets_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY datasets_geom ALTER COLUMN id SET DEFAULT nextval('datasets_geom_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY geo__position_comments ALTER COLUMN id SET DEFAULT nextval('geo__position_comments_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY geo__positions ALTER COLUMN id SET DEFAULT nextval('geo__positions_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY locations ALTER COLUMN id SET DEFAULT nextval('locations_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY proposal_object_comments ALTER COLUMN id SET DEFAULT nextval('proposal_object_comments_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
 --
--- Data for Name: building_comments; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: building_comments; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY building_comments (id, building_id, author, msg, created_at, updated_at, defunct) FROM stdin;
@@ -677,14 +676,14 @@ COPY building_comments (id, building_id, author, msg, created_at, updated_at, de
 
 
 --
--- Name: building_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: building_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('building_comments_id_seq', 1, false);
 
 
 --
--- Data for Name: buildings; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: buildings; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY buildings (id, city_id, name, author, url, scale, atli, "position", created_at, updated_at, onscene, rotation, quaternion, "hiddenBuildData") FROM stdin;
@@ -693,38 +692,36 @@ COPY buildings (id, city_id, name, author, url, scale, atli, "position", created
 
 
 --
--- Name: buildings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: buildings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('buildings_id_seq', 1, true);
 
 
 --
--- Data for Name: buildings_trash; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: buildings_trash; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY buildings_trash (id, city_id, name, author, url, scale, atli, "position", created_at, updated_at, onscene, rotation, quaternion) FROM stdin;
-\.
 
 
 --
--- Data for Name: cities; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: cities; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY cities (id, name, hightmap, dataset, created_at, updated_at) FROM stdin;
 1	Bremen	geoData/Bremen/bre_dsc150.zip	geoData/Bremen/citys/geoData.json	2016-11-15 20:29:22	\N
-\.
 
 
 --
--- Name: cities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: cities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('cities_id_seq', 1, true);
 
 
 --
--- Data for Name: datamap; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: datamap; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY datamap (gid, cfsauid, pruid, prname, geom, city_id) FROM stdin;
@@ -732,14 +729,14 @@ COPY datamap (gid, cfsauid, pruid, prname, geom, city_id) FROM stdin;
 
 
 --
--- Name: datamap_gid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: datamap_gid_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('datamap_gid_seq', 1, false);
 
 
 --
--- Data for Name: datasets; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: datasets; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY datasets (id, city_id, created_at, updated_at, name, color, "dataSet") FROM stdin;
@@ -747,7 +744,7 @@ COPY datasets (id, city_id, created_at, updated_at, name, color, "dataSet") FROM
 
 
 --
--- Data for Name: datasets_geom; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: datasets_geom; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY datasets_geom (ds_id, geom, created_at, updated_at, id, osm_id, type, height) FROM stdin;
@@ -755,21 +752,21 @@ COPY datasets_geom (ds_id, geom, created_at, updated_at, id, osm_id, type, heigh
 
 
 --
--- Name: datasets_geom_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: datasets_geom_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('datasets_geom_id_seq', 1, false);
 
 
 --
--- Name: datasets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: datasets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('datasets_id_seq', 1, false);
 
 
 --
--- Data for Name: geo__position_comments; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: geo__position_comments; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY geo__position_comments (id, geo_position_id, author, msg, created_at, updated_at, defunct) FROM stdin;
@@ -777,14 +774,14 @@ COPY geo__position_comments (id, geo_position_id, author, msg, created_at, updat
 
 
 --
--- Name: geo__position_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: geo__position_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('geo__position_comments_id_seq', 1, false);
 
 
 --
--- Data for Name: geo__positions; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: geo__positions; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY geo__positions (id, city_id, name, author, atli, "position", created_at, updated_at, onscene) FROM stdin;
@@ -792,14 +789,14 @@ COPY geo__positions (id, city_id, name, author, atli, "position", created_at, up
 
 
 --
--- Name: geo__positions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: geo__positions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('geo__positions_id_seq', 1, false);
 
 
 --
--- Data for Name: locations; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: locations; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY locations (id, city_id, name, bbox, created_at, updated_at) FROM stdin;
@@ -807,14 +804,14 @@ COPY locations (id, city_id, name, bbox, created_at, updated_at) FROM stdin;
 
 
 --
--- Name: locations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: locations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('locations_id_seq', 1, false);
 
 
 --
--- Data for Name: proposal_object_comments; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: proposal_object_comments; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY proposal_object_comments (id, proposal_object_id, author, msg, created_at, updated_at, defunct) FROM stdin;
@@ -822,14 +819,14 @@ COPY proposal_object_comments (id, proposal_object_id, author, msg, created_at, 
 
 
 --
--- Name: proposal_object_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: proposal_object_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('proposal_object_comments_id_seq', 1, false);
 
 
 --
--- Data for Name: proposal_objects; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: proposal_objects; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY proposal_objects (id, proposal_id, name, author, url, "preViewImgURL", scale, atli, "position", created_at, updated_at, onscene, rotation, quaternion, hiddenbuildings, "hiddenbuildingsLow") FROM stdin;
@@ -837,7 +834,7 @@ COPY proposal_objects (id, proposal_id, name, author, url, "preViewImgURL", scal
 
 
 --
--- Data for Name: proposal_objects_trash; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: proposal_objects_trash; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY proposal_objects_trash (id, proposal_id, name, author, url, "preViewImgURL", scale, atli, "position", created_at, updated_at, onscene, rotation, quaternion, hiddenbuildings) FROM stdin;
@@ -845,7 +842,7 @@ COPY proposal_objects_trash (id, proposal_id, name, author, url, "preViewImgURL"
 
 
 --
--- Data for Name: proposals; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: proposals; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY proposals (id, city_id, name, author, atli, "position", created_at, updated_at, onscene) FROM stdin;
@@ -853,7 +850,7 @@ COPY proposals (id, city_id, name, author, atli, "position", created_at, updated
 
 
 --
--- Data for Name: spatial_ref_sys; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: spatial_ref_sys; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY spatial_ref_sys  FROM stdin;
@@ -861,7 +858,7 @@ COPY spatial_ref_sys  FROM stdin;
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: superuser
 --
 
 COPY users (id, name, email, role, password, remember_token, created_at, updated_at, total_logins, recent_login) FROM stdin;
@@ -870,7 +867,7 @@ COPY users (id, name, email, role, password, remember_token, created_at, updated
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: superuser
 --
 
 SELECT pg_catalog.setval('users_id_seq', 1, true);
@@ -879,7 +876,7 @@ SELECT pg_catalog.setval('users_id_seq', 1, true);
 SET search_path = topology, pg_catalog;
 
 --
--- Data for Name: topology; Type: TABLE DATA; Schema: topology; Owner: postgres
+-- Data for Name: topology; Type: TABLE DATA; Schema: topology; Owner: superuser
 --
 
 COPY topology  FROM stdin;
@@ -887,7 +884,7 @@ COPY topology  FROM stdin;
 
 
 --
--- Data for Name: layer; Type: TABLE DATA; Schema: topology; Owner: postgres
+-- Data for Name: layer; Type: TABLE DATA; Schema: topology; Owner: superuser
 --
 
 COPY layer  FROM stdin;
@@ -897,7 +894,7 @@ COPY layer  FROM stdin;
 SET search_path = public, pg_catalog;
 
 --
--- Name: cities_id; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: cities_id; Type: CONSTRAINT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY cities
@@ -905,7 +902,7 @@ ALTER TABLE ONLY cities
 
 
 --
--- Name: datasets_geom_id; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: datasets_geom_id; Type: CONSTRAINT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY datasets_geom
@@ -913,7 +910,7 @@ ALTER TABLE ONLY datasets_geom
 
 
 --
--- Name: datasets_id; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: datasets_id; Type: CONSTRAINT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY datasets
@@ -921,7 +918,7 @@ ALTER TABLE ONLY datasets
 
 
 --
--- Name: datasets_city_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: datasets_city_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY datasets
@@ -929,7 +926,7 @@ ALTER TABLE ONLY datasets
 
 
 --
--- Name: datasets_geom_ds_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: datasets_geom_ds_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: superuser
 --
 
 ALTER TABLE ONLY datasets_geom
@@ -937,12 +934,12 @@ ALTER TABLE ONLY datasets_geom
 
 
 --
--- Name: public; Type: ACL; Schema: -; Owner: postgres
+-- Name: public; Type: ACL; Schema: -; Owner: superuser
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM postgres;
-GRANT ALL ON SCHEMA public TO postgres;
+REVOKE ALL ON SCHEMA public FROM superuser;
+GRANT ALL ON SCHEMA public TO superuser;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 

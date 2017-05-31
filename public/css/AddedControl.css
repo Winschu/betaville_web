@@ -1,25 +1,29 @@
-.cntrOUT{
-    display:inline-block;
-    width:100%;
+.cntrOUT {
+    display: inline-block;
+    width: 100%;
 }
-#controlDiv{
+
+#controlDiv {
     clear: both;
     position: relative;
     width: 100%;
     display: none;
 }
-#controlDiv ul{
-    margin:0;
-    padding:0;
+
+#controlDiv ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
-#controlDiv li{
+
+#controlDiv li {
     /* TODO: Empty body */
 }
-#controlDiv input{
+
+#controlDiv input {
     float: none;
     width: 0;
-      /* Double-sized Checkboxes */
+    /* Double-sized Checkboxes */
     -ms-transform: scale(0.8); /* IE */
     -moz-transform: scale(0.8); /* FF */
     -webkit-transform: scale(0.8); /* Safari and Chrome */
@@ -28,36 +32,42 @@
     padding: 0;
     vertical-align: middle;
 }
-#controlDiv p{
-    float:left;
+
+#controlDiv p {
+    float: left;
     display: inline-block;
     font-size: 70%;
     margin: 0;
     padding: 1%;
     width: 25%;
 }
-#controlDiv div{
+
+#controlDiv div {
     text-align: left;
- 
-}
-#controlDiv input[type=text]{
-    background-color: lightgrey;
-    border:0 solid;
-    font-family: verdana, sans-serif;
-    color:black;
-    width:70%;
-    float:right;
+
 }
 
-#infoPosition{
+#controlDiv input[type=text] {
+    background-color: lightgrey;
+    border: 0 solid;
+    font-family: verdana, sans-serif;
+    color: black;
+    width: 70%;
+    float: right;
+}
+
+#infoPosition {
     /* TODO: Empty body */
 }
-#infoPosition div{
+
+#infoPosition div {
     /* TODO: Empty body */
 }
-#infoPosition p{
+
+#infoPosition p {
     width: 30%;
 }
-#infoPosition a{
+
+#infoPosition a {
     font-size: 65%
 }
